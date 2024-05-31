@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - images/radicale/**
+      - Makefile
 
 jobs:
   build:
@@ -13,4 +14,4 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - run: make images/radicale
+      - run: make images/radicale -B

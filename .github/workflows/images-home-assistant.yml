@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - images/home-assistant/**
+      - Makefile
 
 jobs:
   build:
@@ -13,4 +14,4 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - run: make images/home-assistant
+      - run: make images/home-assistant -B
