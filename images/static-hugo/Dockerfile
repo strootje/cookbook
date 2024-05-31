@@ -1,7 +1,7 @@
 FROM docker.io/alpine:latest
 
 EXPOSE 1313
-ENV REPO=https://github.com/strootje/hugo-site-strooware
+ENV REPO=
 
 RUN apk add --no-cache git hugo tini
 COPY <<'EOF' /entrypoint
