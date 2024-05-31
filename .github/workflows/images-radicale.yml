@@ -1,0 +1,16 @@
+name: Makefile CI
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - images/radicale/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: make images/radicale
