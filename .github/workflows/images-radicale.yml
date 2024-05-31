@@ -14,4 +14,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - run: make images/radicale -B
+      - run: make images/radicale/build -B
+      - run: make images/radicale/push
+        env:
+          REGISTRY: docker.io
+          TOKEN: ${{ secrets.DOCKER_TOKEN }}
+          USER: ${{ secrets.DOCKER_USER }}
