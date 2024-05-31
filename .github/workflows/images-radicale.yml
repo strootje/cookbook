@@ -14,7 +14,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: gacts/install-podman@v1
       - run: make images/radicale/build -B
       - run: make images/radicale/push
         env:
