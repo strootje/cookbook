@@ -8,7 +8,7 @@ images/radicale/%:        VERSION = 3.2.0.0
 images: $(IMAGES:images/%/Dockerfile=images/%/build)
 
 images/%/build: images/%/Dockerfile
-	@podman build --build-args="VERSION=${VERSION}" --tag="strootje/$*:${VERSION}" --file="$<" "$(@D)"
+	@podman build --build-arg="VERSION=${VERSION}" --tag="strootje/$*:${VERSION}" --file="$<" "$(@D)"
 
 images/%/push: images/%/build
 	@podman push --creds="${USER}:${TOKEN}" "strootje/$*:${VERSION}" "${REGISTRY}/strootje/$*:${VERSION}"
