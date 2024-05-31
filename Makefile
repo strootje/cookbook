@@ -2,6 +2,7 @@ BUILDFLAGS += --no-builtin-rules
 IMAGES = $(wildcard images/**/Dockerfile)
 -include .env.local
 
+VERSION = 0.1.0
 images/home-assistant/%:  VERSION = 2024.5
 images/radicale/%:        VERSION = 3.2.0.0
 

@@ -1,11 +1,11 @@
-name: Images / HomeAssistant
+name: Images / StaticHugo
 
 on:
   push:
     branches:
       - master
     paths:
-      - images/home-assistant/**
+      - images/static-hugo/**
       - Makefile
 
 jobs:
@@ -14,8 +14,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - run: make images/home-assistant/build -B
-      - run: make images/home-assistant/push
+      - run: make images/static-hugo/build -B
+      - run: make images/static-hugo/push
         env:
           REGISTRY: docker.io
           TOKEN: ${{ secrets.DOCKER_TOKEN }}
