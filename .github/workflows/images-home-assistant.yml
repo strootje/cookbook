@@ -14,8 +14,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - run: make images/radicale/build -B
-      - run: make images/radicale/push
+      - run: make images/home-assistant/build -B
+      - run: make images/home-assistant/push
         env:
           REGISTRY: docker.io
           TOKEN: ${{ secrets.DOCKER_TOKEN }}
